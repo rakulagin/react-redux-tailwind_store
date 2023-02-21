@@ -7,8 +7,6 @@ const [isCardVisible, setCardVisible] = useState(false)
 
 const toggleCardVisible = () => {
   setCardVisible(!isCardVisible);
-  console.log('12') //test1
-
 }
 
   return (
@@ -20,7 +18,7 @@ const toggleCardVisible = () => {
             to='/'
             className='text-gray-700 text-base font-medium mx-4 hover:text-purple-700 cursor-pointer'
           >
-            Главная
+            Главная страница
           </Link>
           <Link
             to='about'

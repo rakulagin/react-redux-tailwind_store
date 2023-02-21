@@ -7,6 +7,7 @@ const [isCardVisible, setCardVisible] = useState(false)
 
 const toggleCardVisible = () => {
   setCardVisible(!isCardVisible);
+  console.log('12')
 }
 
   return (

@@ -16,7 +16,7 @@ export const Card = () => {
     dispatch(clearCard())
   }
 
-  const totalPrice = parseFloat(cardItems.items.reduce((acc, curr) => acc + curr.price, 0).toFixed(2))
+  const totalPrice = parseFloat(cardItems.items.reduce((acc, curr) => acc + curr.amount, 0).toFixed(2))
 
   return (
     <div className='border-4 border-purple-500 rounded-lg bg-slate-50 absolute top-20 w-1/3 right-10 p-4'>
@@ -24,7 +24,7 @@ export const Card = () => {
       {cardItems.items.length ?
         (<div className='grid grid-cols-8 gap-4 rounded-lg bg-white mb-2'>
             <div>Pic</div>
-            <div className='col-span-4'>Title</div>
+            <div className='col-span-3'>Title</div>
             <div>Qty</div>
             <div className='col-span-2'>Price</div>
           </div>
@@ -40,12 +40,13 @@ export const Card = () => {
           title={obj.title}
           price={obj.price}
           quantity={obj.quantity}
+          amount={obj.amount}
         />
       ))}
       {cardItems.items.length > 0 &&
         <>
           <div className='grid grid-cols-8 gap-4 mb-2'>
-            <div className='col-span-6 justify-self-end font-bold'>Total</div>
+            <div className='col-span-5 justify-self-end font-bold'>Total</div>
             <div className='col-span-2 font-bold text-purple-700'>$ {totalPrice}</div>
           </div>
           <div className='w-100% flex justify-end gap-4'>

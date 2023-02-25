@@ -1,20 +1,27 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../redux/slices/products';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchProducts} from '../redux/slices/products';
+import {addItem} from '../redux/slices/cardItems'
+
 import Item from '../components/Item';
 
 const ListItems = () => {
 
-    const dispatch = useDispatch();
-  const { products } = useSelector(state => state.products);
+  const dispatch = useDispatch();
+  const {products} = useSelector(state => state.products);
   const isLoaded = products.status === 'loaded';
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
 
+  const addButton = (id) => {
+    dispatch(addItem(id))
+  }
+
   return (
-    <div className='container mx-auto grid grid-cols-3 gap-10'>
+    // <div className='container mx-auto grid grid-cols-3 gap-10'>
+    <div>
       {isLoaded ? (
         products.items.map(obj => (
           <Item
@@ -26,6 +33,7 @@ const ListItems = () => {
             price={obj.price}
             rating={obj.rating}
             title={obj.title}
+            addButton={addButton}
           />
         ))
       ) : (

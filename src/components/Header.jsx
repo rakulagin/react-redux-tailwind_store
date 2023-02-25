@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import { Card } from './card';
 
 const Header = () => {
-const [isCardVisible, setCardVisible] = useState(false)
+const [isCardVisible, setCardVisible] = useState(true)
 
 const toggleCardVisible = () => {
   setCardVisible(!isCardVisible);
@@ -12,14 +12,13 @@ const toggleCardVisible = () => {
   return (
     <header className='bg-purple-100 rounded-b-xl shadow-xl p-4 mb-8'>
       <div className='container mx-auto flex justify-between items-center'>
-        <h1 className='text-xl font-bold text-purple-700'>Логотип</h1>
+        <Link
+          to='/'
+          className='text-xl font-bold text-purple-700 hover:text-purple-700 cursor-pointer'
+        >
+          Магазин
+        </Link>
         <nav className='flex'>
-          <Link
-            to='/'
-            className='text-gray-700 text-base font-medium mx-4 hover:text-purple-700 cursor-pointer'
-          >
-            Главная страница
-          </Link>
           <Link
             to='about'
             className='text-gray-700 text-base font-medium mx-4 hover:text-purple-700 cursor-pointer'

@@ -1,16 +1,22 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
+import {useDispatch,useSelector} from "react-redux";
+import {clearCard} from '../redux/slices/cardItems'
 
 import {CardItem} from "./CardItem.jsx";
 
 
+
 export const Card = () => {
 
+  const dispatch = useDispatch();
   const {cardItems} = useSelector(state => state.cardItems)
 
-  const totalPrice = cardItems.items.reduce((acc, curr) => acc + curr.price, 0)
+  const clearCardButton = () => {
+    dispatch(clearCard())
+  }
 
-  console.log(totalPrice)
+  const totalPrice = parseFloat(cardItems.items.reduce((acc, curr) => acc + curr.price, 0).toFixed(2))
 
   return (
     <div className='border-4 border-purple-500 rounded-lg bg-slate-50 absolute top-20 w-1/3 right-10 p-4'>
@@ -42,13 +48,13 @@ export const Card = () => {
             <div className='col-span-6 justify-self-end font-bold'>Total</div>
             <div className='col-span-2 font-bold text-purple-700'>$ {totalPrice}</div>
           </div>
-          <div className='flex justify-between'>
-            <button className='bg-white text-purple-500 px-4 py-2 rounded-md font-medium border-2 border-purple-500 hover:border-purple-700 hover:bg-purple-500 hover:text-white'>
+          <div className='w-100% flex justify-end gap-4'>
+            <button onClick={clearCardButton} className='bg-white text-purple-500 px-4 py-2 rounded-md font-medium border-2 border-purple-500 hover:border-purple-700 hover:bg-purple-500 hover:text-white'>
               Clear Card
             </button>
-            <button className='bg-purple-500 text-white px-4 py-2 rounded-md font-medium hover:bg-purple-600'>
+            <Link to='/card' className='bg-purple-500 text-white px-4 py-2 rounded-md font-medium hover:bg-purple-600'>
               Go to Card
-            </button>
+            </Link>
           </div>
         </>
       }

@@ -11,14 +11,23 @@ const cardItemsSlice = createSlice({
   initialState,
   reducers: {
     addItem(state,action) {
-      state.cardItems.items.push(action.payload)
-      // const find = state.cardItems.items.find(el => el.id === action.payload.id)
+      const find = state.cardItems.items.find(el => el.id === action.payload.id)
+      console.log('find: ',find)
+      if (find) {
+        find.quantity++
+      } else {
+        state.cardItems.items.push(action.payload)
+      }
+
     },
-    clearCard(state,action) {
+    removeItem(state,action) {
+
+    },
+    clearCard(state) {
       state.cardItems.items = []
     },
   }
 })
 
-export const {addItem, clearCard} = cardItemsSlice.actions
+export const {addItem, clearCard, removeItem} = cardItemsSlice.actions
 export const cardItemsReducer =  cardItemsSlice.reducer

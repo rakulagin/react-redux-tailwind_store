@@ -13,28 +13,28 @@ const toggleCardVisible = () => {
       <div className='container mx-auto flex justify-between items-center'>
         <Link
           to='/'
-          className='text-xl font-bold text-purple-700 hover:text-purple-700 cursor-pointer'
+          className='text-xl font-bold text-purple-500 hover:text-purple-700 cursor-pointer'
         >
-          Магазин
+          Go Shop
         </Link>
         <nav className='flex'>
           <Link
             to='about'
             className='text-gray-700 text-base font-medium mx-4 hover:text-purple-700 cursor-pointer'
           >
-            О нас
+            About Us
           </Link>
           <Link
             to='contacts'
             className='text-gray-700 text-base font-medium mx-4 hover:text-purple-700 cursor-pointer'
           >
-            Контакты
+            Contacts
           </Link>
           <a
             className='text-gray-700 text-base font-medium mx-4 hover:text-purple-700 cursor-pointer select-none'
             onClick={toggleCardVisible}
           >
-            Корзина
+            Shopping Card
           </a>
           {/*{isCardVisible && <Card />}*/}
         </nav>

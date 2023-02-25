@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
-import { Card } from './card';
 
 const Header = () => {
 const [isCardVisible, setCardVisible] = useState(true)
@@ -37,7 +36,7 @@ const toggleCardVisible = () => {
           >
             Корзина
           </a>
-          {isCardVisible && <Card />}
+          {/*{isCardVisible && <Card />}*/}
         </nav>
       </div>
     </header>

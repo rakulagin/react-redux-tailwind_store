@@ -15,8 +15,9 @@ const ListItems = () => {
     dispatch(fetchProducts());
   }, []);
 
-  const addButton = (id) => {
-    dispatch(addItem(id))
+  const addToCard = ({id}) => {
+    const item = products.items.find(el => el.id === id)
+    dispatch(addItem({...item, quantity: 1}))
   }
 
   return (
@@ -33,7 +34,7 @@ const ListItems = () => {
             price={obj.price}
             rating={obj.rating}
             title={obj.title}
-            addButton={addButton}
+            addToCard={addToCard}
           />
         ))
       ) : (

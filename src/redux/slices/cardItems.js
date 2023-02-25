@@ -11,17 +11,11 @@ const cardItemsSlice = createSlice({
   initialState,
   reducers: {
     addItem(state,action) {
-      // state.items.push({
-      //   id: action.payload.id,
-      //   title: action.payload.title,
-      //   image: action.payload.image,
-      //   price: action.payload.price,
-      // })
-      console.log('payload', action.payload)
+      state.cardItems.items.push(action.payload)
+      const find = state.cardItems.items.find(el => el.id === action.payload.id)
     }
   }
 })
 
 export const {addItem} = cardItemsSlice.actions
-
-export default cardItemsSlice.reducer
+export const cardItemsReducer =  cardItemsSlice.reducer

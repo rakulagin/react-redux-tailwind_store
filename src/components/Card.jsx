@@ -19,7 +19,7 @@ export const Card = () => {
   const totalPrice = parseFloat(cardItems.items.reduce((acc, curr) => acc + curr.amount, 0).toFixed(2))
 
   return (
-    <div className='border-4 border-purple-500 rounded-lg bg-slate-50 absolute top-20 w-1/3 right-10 p-4'>
+    <div className='border-4 border-purple-500 rounded-lg bg-slate-50 absolute top-20 w-96 right-10 p-4'>
 
       {cardItems.items.length ?
         (<div className='grid grid-cols-8 gap-4 rounded-lg bg-white mb-2'>

@@ -1,12 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom'
+import {useDispatch} from "react-redux";
+import {toggleCardVisible} from "../redux/slices/cardItems.js";
 
 const Header = () => {
-const [isCardVisible, setCardVisible] = useState(true)
 
-const toggleCardVisible = () => {
-  setCardVisible(!isCardVisible);
-}
+  const dispatch = useDispatch()
+
+  const handlerVisible = () => {
+    dispatch(toggleCardVisible())
+  }
+
+// const toggleCardVisible = () => {
+//   setCardVisible(!isCardVisible);
+// }
 
   return (
     <header className='bg-purple-100 rounded-b-xl shadow-xl p-4 mb-8'>
@@ -32,7 +39,7 @@ const toggleCardVisible = () => {
           </Link>
           <a
             className='text-gray-700 text-base font-medium mx-4 hover:text-purple-700 cursor-pointer select-none'
-            onClick={toggleCardVisible}
+            onClick={handlerVisible}
           >
             Shopping Card
           </a>

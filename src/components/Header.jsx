@@ -1,15 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import {useDispatch} from "react-redux";
-import {toggleCardVisible} from "../redux/slices/cardItems.js";
 
 const Header = () => {
-
-  const dispatch = useDispatch()
-
-  const handlerVisible = () => {
-    dispatch(toggleCardVisible())
-  }
 
   return (
     <header className='bg-purple-100 rounded-b-xl shadow-xl p-4 mb-8'>
@@ -33,12 +25,11 @@ const Header = () => {
           >
             Contacts
           </Link>
-          <a
-            className='text-gray-700 text-base font-medium mx-4 hover:text-purple-700 cursor-pointer select-none'
-            onClick={handlerVisible}
+          <Link
+            to='/card' className='text-gray-700 text-base font-medium mx-4 hover:text-purple-700 cursor-pointer select-none'
           >
             Shopping Card
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

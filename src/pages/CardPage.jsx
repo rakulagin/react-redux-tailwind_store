@@ -9,7 +9,7 @@ export const CardPage = () => {
   const {cardItems} = useSelector(state => state.cardItems)
 
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto pb-24'>
       {cardItems && cardItems.items.map((obj, index) => (
         <CardItem
           key={index}

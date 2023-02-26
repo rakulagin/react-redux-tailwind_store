@@ -8,7 +8,7 @@ import {Home, About, Contacts, FullItem, CardPage} from './pages'
 
 function App() {
   return (
-    <div className='bg-slate-50'>
+    <div className='min-h-screen bg-slate-50'>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />

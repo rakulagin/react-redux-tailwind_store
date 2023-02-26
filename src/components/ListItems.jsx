@@ -21,7 +21,7 @@ const ListItems = () => {
   }
 
   return (
-    <div>
+    <div className='mb-24'>
       {isLoaded ? (
         products.items.map(obj => (
           <Item

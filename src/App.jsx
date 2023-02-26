@@ -8,7 +8,7 @@ import {Home, About, Contacts, FullItem, CardPage} from './pages'
 
 function App() {
   return (
-    <div className='bg-slate-50'>
+    <div className='bg-slate-50 h-screen'>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -17,7 +17,7 @@ function App() {
         <Route path='/contacts' element={<Contacts />} />
         <Route path='/card' element={<CardPage />} />
       </Routes>
-      {/* <Footer/> */}
+       <Footer/>
     </div>
   );
 }

@@ -11,10 +11,6 @@ const Header = () => {
     dispatch(toggleCardVisible())
   }
 
-// const toggleCardVisible = () => {
-//   setCardVisible(!isCardVisible);
-// }
-
   return (
     <header className='bg-purple-100 rounded-b-xl shadow-xl p-4 mb-8'>
       <div className='container mx-auto flex justify-between items-center'>
@@ -43,7 +39,6 @@ const Header = () => {
           >
             Shopping Card
           </a>
-          {/*{isCardVisible && <Card />}*/}
         </nav>
       </div>
     </header>

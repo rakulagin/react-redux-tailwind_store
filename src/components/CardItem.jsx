@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 import {removeItem} from '../redux/slices/cardItems'
 
-export const CardItem = ({id, image, title, price, quantity, amount}) => {
+export const CardItem = ({id, image, title, price, quantity, amount, fullPage}) => {
 
   const dispatch = useDispatch();
 

@@ -21,7 +21,6 @@ const ListItems = () => {
   }
 
   return (
-    // <div className='container mx-auto grid grid-cols-3 gap-10'>
     <div>
       {isLoaded ? (
         products.items.map(obj => (

@@ -14,12 +14,15 @@ export const CardPage = () => {
         <CardItem
           key={index}
           id={obj.id}
-          image={obj.image}
           title={obj.title}
           price={obj.price}
+          description={obj.description}
+          category={obj.category}
+          image={obj.image}
+          rating={obj.rating}
           quantity={obj.quantity}
           amount={obj.amount}
-          fullPage={true}
+          isFullPage={true}
         />))}
     </div>
   )

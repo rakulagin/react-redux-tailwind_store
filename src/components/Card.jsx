@@ -32,6 +32,7 @@ export const Card = () => {
               key={index}
               id={obj.id}
               image={obj.image}
+              description={obj.description}
               title={obj.title}
               price={obj.price}
               quantity={obj.quantity}
